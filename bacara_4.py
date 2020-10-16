@@ -1,3 +1,4 @@
+#EP  DESENVOLVIMENTO
 import random
 x=int(input('Quanto(s) player(s) você deseja no jogo? '))
 o=int(input('Com quantos baralhos você(s) desejam jogar? 1, 6 ou 8? '))
