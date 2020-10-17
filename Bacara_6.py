@@ -7,27 +7,10 @@ while h<j:
     fichas1=float(input('Com quantas fichas você quer começar, player {0}: '.format(h+1)))
     fichas.append(fichas1)
     h+=1
-while True:
-    if o==1 or o==6 or o==8:
-        None
-    else:
-        print('Não temos essa opção de baralhos, recomece o jogo!')
-        break
 
-    a=False
-    for m in fichas:
-        if m==0 or m<1:
-            print('Que pena, as fichas de algum player, acabaram, FIM DE JOGO!')
-            a=True
-        
-    if a==True:
-        break
-    
-    def resultados(soma_cartas1,soma_cartas2):
-
-        
-        while i<len(lista):
-            i=0
+def resultados(soma_cartas1,soma_cartas2):
+        i=0
+        while i<len(fichas):
             if escolhas[i]=='empate':
                 if soma_cartas1==soma_cartas2:
                     fichas[i]=fichas[i] +8*(1-0.1436)*apostas[i]
@@ -59,7 +42,21 @@ while True:
                 break
             i+=1
             return fichas
-            
+while True:
+    if o==1 or o==6 or o==8:
+        None
+    else:
+        print('Não temos essa opção de baralhos, recomece o jogo!')
+        break
+
+    a=False
+    for m in fichas:
+        if m==0 or m<1:
+            print('Que pena, as fichas de algum player, acabaram, FIM DE JOGO!')
+            a=True
+        
+    if a==True:
+        break
               
     às=['ás',1]
     dois=['dois',2]
