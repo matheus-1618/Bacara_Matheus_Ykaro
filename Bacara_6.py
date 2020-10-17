@@ -109,7 +109,7 @@ while True: #Booleana que aceita o preenchimento da lista
         f+=1
         
     b=0
-    while b<len(escolhas): #Loop para o caso em que o player deseje encerrar o jogo
+    while b<len(escolhas): #Loop para o caso em que o player deseja encerrar o jogo
         if escolhas[b]=='Sair' or escolhas[b]=='sair':
             print(' Que pena que você desistiu!Você saiu com {0:.2f} fichas'.format(float(fichas)))
             break
@@ -117,7 +117,7 @@ while True: #Booleana que aceita o preenchimento da lista
              b+=1
     numeros=[às,dois,três,quatro,cinco,seis,sete,oito,nove,dez,valete,dama,rei]*o
     naipes=['paus','ouros','espadas','copas']*o
-
+    #sorteio aleatório tanto de números quanto de strings
     a=random.sample(numeros,1)
     b=random.sample(numeros,1)
     c=random.sample(numeros,1)
@@ -132,7 +132,7 @@ while True: #Booleana que aceita o preenchimento da lista
     soma_cartas1= a[0][1]+b[0][1]
     soma_cartas2= c[0][1]+d[0][1]
 
-    if soma_cartas1==8 or soma_cartas1==9:
+    if soma_cartas1==8 or soma_cartas1==9: #condicional para quando
         if soma_cartas2>9:
             soma_cartas2=soma_cartas2-10
             soma_cartas1=soma_cartas1
