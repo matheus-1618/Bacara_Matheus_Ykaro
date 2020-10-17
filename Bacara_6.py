@@ -132,8 +132,8 @@ while True: #Booleana que aceita o preenchimento da lista
     soma_cartas1= a[0][1]+b[0][1]
     soma_cartas2= c[0][1]+d[0][1]
 
-    if soma_cartas1==8 or soma_cartas1==9: #condicional para quando
-        if soma_cartas2>9:
+    if soma_cartas1==8 or soma_cartas1==9: #condicional para quando a soma de cartas do jogador é 8 ou 9 
+        if soma_cartas2>9: #se a soma de cartas do banco for maior que 9, é retirado 10 pontos
             soma_cartas2=soma_cartas2-10
             soma_cartas1=soma_cartas1
             print('A soma do jogador é {0} e do banco é {1}'.format(soma_cartas1,soma_cartas2))
@@ -141,7 +141,7 @@ while True: #Booleana que aceita o preenchimento da lista
             print(x)
             
                 
-        elif soma_cartas2<=9:
+        elif soma_cartas2<=9: #senão se a soma de cartas do banco for menor ou igual a nove, a pontuaçaõ permanece 
             soma_cartas2=soma_cartas2
             soma_cartas1=soma_cartas1
             print('A soma do jogador é {0} e do banco é {1}'.format(soma_cartas1,soma_cartas2))
@@ -149,8 +149,8 @@ while True: #Booleana que aceita o preenchimento da lista
             print(x)
             
         
-    elif soma_cartas2==8 or soma_cartas2==9:
-        if soma_cartas1>9:
+    elif soma_cartas2==8 or soma_cartas2==9: #condicional para quando a soma de cartas do banco é 8 ou 9 
+        if soma_cartas1>9: #se a soma de cartas do jogador for maior que 9, é retirado 10 pontos
             soma_cartas1=soma_cartas1-10
             soma_cartas2=soma_cartas2
             print('A soma do jogador é {0} e do banco é {1}'.format(soma_cartas1,soma_cartas2))
@@ -158,17 +158,17 @@ while True: #Booleana que aceita o preenchimento da lista
             print(x)
             
             
-        elif soma_cartas1<=9:
+        elif soma_cartas1<=9: #senão se a soma de cartas do jogador for menor ou igual a nove, a pontuaçaõ permanece 
             soma_cartas2=soma_cartas2
             soma_cartas1=soma_cartas1
             print('A soma do jogador é {0} e do banco é {1}'.format(soma_cartas1,soma_cartas2))
             x=resultados(soma_cartas1,soma_cartas2)
             print(x)
             
-    elif soma_cartas1>9 and soma_cartas2>9:
+    elif soma_cartas1>9 and soma_cartas2>9: #para o caso em que a soma de cartas do jogador e do banco são maiores que 9 é retirado 10 pontos de ambos
         soma_cartas1=soma_cartas1-10
         soma_cartas2=soma_cartas2-10
-        if soma_cartas1<=5 and soma_cartas2<=5:
+        if soma_cartas1<=5 and soma_cartas2<=5: #se a soma de cartas do jogador e do banco forem menores ou iguais a 5, é sorteada uma terceira carta para ambos
             a1=random.sample(numeros,1)
             a2=random.sample(numeros,1)
             a3=random.sample(naipes,1)
@@ -177,11 +177,11 @@ while True: #Booleana que aceita o preenchimento da lista
             print('A terceira carta do banco é {0} do naipe {1}'.format(a2[0][0],a4[0]))
             soma_cartas1=soma_cartas1+a1[0][1]
             soma_cartas2=soma_cartas2+a2[0][1]
-            if soma_cartas1>9 and soma_cartas2>9:
+            if soma_cartas1>9 and soma_cartas2>9: #se a soma de cartas tanto do jogador quanto do banco forem maiores do que 9, é retirado 10 pontos de cada
                 soma_cartas1=soma_cartas1-10
                 soma_cartas2=soma_cartas2-10
                 
-            elif soma_cartas1>9 and soma_cartas2<=9:
+            elif soma_cartas1>9 and soma_cartas2<=9: #quando a soma do jogador é maior que nove, é retirado 10 pontos do jogador
                 soma_cartas1=soma_cartas1-10
                 soma_cartas2=soma_cartas2
                 print('A soma do jogador é {0} e do banco é {1}'.format(soma_cartas1,soma_cartas2))
@@ -189,7 +189,7 @@ while True: #Booleana que aceita o preenchimento da lista
                 print(x)
                 
                 
-            elif soma_cartas1<=9 and soma_cartas2>9:
+            elif soma_cartas1<=9 and soma_cartas2>9: #quando a soma do banco é maior que nove, é retirado 10 pontos do banco
                 soma_cartas1=soma_cartas1
                 soma_cartas2=soma_cartas2-10
                 print('A soma do jogador é {0} e do banco é {1}'.format(soma_cartas1,soma_cartas2))
@@ -197,8 +197,8 @@ while True: #Booleana que aceita o preenchimento da lista
                 print(x)
                 
                 
-            elif soma_cartas1<=9 and soma_cartas2<=9:
-                if soma_cartas2<=5 and soma_cartas1<=5:
+            elif soma_cartas1<=9 and soma_cartas2<=9: #condicional para quando a soma do jogador e do banco são menores ou iguais a 9
+                if soma_cartas2<=5 and soma_cartas1<=5: #se a soma de cartas do banco e do jogador forem menores ou iguais a 5, é sorteada uma terceira carta para ambos
                     h1=random.sample(numeros,1)
                     h2=random.sample(numeros,1)
                     h3=random.sample(naipes,1)
