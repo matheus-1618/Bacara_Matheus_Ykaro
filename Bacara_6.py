@@ -2,7 +2,7 @@ import random
 print('''
 Olá! Seja bem vindo ao Cassino Matheus&Ykaro! Iremos jogar Bacará!
 O jogo consiste em distribuir cartas de forma aleatória para o Banco e para o jogador.
-Ganha quem chegar o mais próximo da soma 9.
+Ganha quem chegar o mais próximo possível da soma 9.
 ''')
 j=int(input('Quanto(s) player(s) você deseja no jogo? '))
 o=int(input('Com quantos baralhos você(s) desejam jogar? 1, 6 ou 8? '))
