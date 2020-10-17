@@ -11,16 +11,16 @@ while h<j: #Loop para que a pergunta se repita para todos players
     fichas1=float(input('Com quantas fichas você quer começar, player {0}: ?'.format(h+1)))
     fichas.append(fichas1)
     h+=1
-while True: 
+while True: #Booleana que aceita o preenchimento da lista
     fichas=[]
     if o==1 or o==6 or o==8:
         None
-    else:
+    else: #condicional para o caso em que o player informa um número de baralho não permitido
         print('Não temos essa opção de baralhos, recomece o jogo!')
         break
 
     a=False
-    for m in fichas:
+    for m in fichas: #condicional para quando as fichas de um ou mais players acaba
         if m==0 or m<1:
             print('Que pena, as fichas de algum player, acabaram, FIM DE JOGO!')
             a=True
@@ -28,15 +28,15 @@ while True:
     if a==True:
         break
     
-    def resultados(soma_cartas1,soma_cartas2):
+    def resultados(soma_cartas1,soma_cartas2): #função definida para a soma das cartas do banco e jogador
         i=0
         while i<len(fichas):
         while i<len(lista):
 
         
         while i<len(lista):
-            i=0
-            if escolhas[i]=='empate':
+            i=0 
+            if escolhas[i]=='empate': #condicional para quando o player escolhe apostar no empate
                 if soma_cartas1==soma_cartas2:
                     fichas[i]=fichas[i] +8*(1-0.1436)*apostas[i]
                     print('Você ganhou,player {0}!'.format(i+1))
@@ -44,7 +44,7 @@ while True:
                     fichas[i]=fichas[i]- apostas[i]
                     print('Você perdeu,player {0}!'.format(i+1))
         
-            elif escolhas[i]=='banco':
+            elif escolhas[i]=='banco': #condicional para quando o player escolhe apostar no banco
                 if soma_cartas2>soma_cartas1:
                     fichas[i]=fichas[i] + (0.95)*(1-0.0106)*apostas[i]
                     print('Você ganhou,player {0}!'.format(i+1))
@@ -53,7 +53,7 @@ while True:
                     fichas[i]=fichas[i] -apostas[i]
                     print('Você perdeu, player {0}!'.format(i+1))
                                        
-            elif escolhas[i]=='jogador':
+            elif escolhas[i]=='jogador': #condicional para quando o player escolhe apostar no jogo
                 if soma_cartas1>soma_cartas2:
                     fichas[i]=fichas[i] +apostas[i]*(1-0.024)
                     print('Você ganhou, player {0}!'.format(i+1))
@@ -62,12 +62,13 @@ while True:
                     fichas[i]=fichas[i] - apostas[i]
                     print('Você perdeu, player {0}!'.format(i+1))
                   
-            else:
+            else: #condicional para quando o player escreve algo não previsto no código
                 print('Parece que você digitou errado, recomece o jogo')
                 break
             i+=1
             return fichas
-              
+
+    #definição de listas refentes aos valores de cada carta do baralho          
     às=['ás',1]
     dois=['dois',2]
     três=['três',3]
@@ -86,7 +87,7 @@ while True:
     apostas=[]
     c=False
     s=0
-    for m in fichas:
+    for m in fichas: 
         print('Você tem {0} fichas, player {1}'.format(m,s+1))
         s+=1
         print('Em quem você deseja apostar? ')
