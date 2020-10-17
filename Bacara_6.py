@@ -24,13 +24,10 @@ while True:
         break
     
     def resultados(soma_cartas1,soma_cartas2):
-        m=0
-        lista=[]
-        while m<j:
-            lista.append(m)
-            m+=1
-        i=0
+
+        
         while i<len(lista):
+            i=0
             if escolhas[i]=='empate':
                 if soma_cartas1==soma_cartas2:
                     fichas[i]=fichas[i] +8*(1-0.1436)*apostas[i]
