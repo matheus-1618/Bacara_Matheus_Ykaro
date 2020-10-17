@@ -30,7 +30,11 @@ while True:
     
     def resultados(soma_cartas1,soma_cartas2):
         i=0
+<<<<<<< HEAD
         while i<len(fichas):
+=======
+        while i<len(lista):
+>>>>>>> d37b2c521a1f406e64c12384e6a52bbcc3f27288
             if escolhas[i]=='empate':
                 if soma_cartas1==soma_cartas2:
                     fichas[i]=fichas[i] +8*(1-0.1436)*apostas[i]
