@@ -1,13 +1,18 @@
-import random
+import random 
+print('''
+Olá! Seja bem vindo ao Cassino Matheus&Ykaro! Iremos jogar Bacará!
+O jogo consiste em distribuir cartas de forma aleatória para o Banco e para o jogador.
+Ganha quem chegar o mais próximo da soma 9.
+''')
 j=int(input('Quanto(s) player(s) você deseja no jogo? '))
 o=int(input('Com quantos baralhos você(s) desejam jogar? 1, 6 ou 8? '))
 h=0
-fichas=[]
 while h<j:
     fichas1=float(input('Com quantas fichas você quer começar, player {0}: '.format(h+1)))
     fichas.append(fichas1)
     h+=1
 while True:
+    fichas=[]
     if o==1 or o==6 or o==8:
         None
     else:
@@ -24,37 +29,32 @@ while True:
         break
     
     def resultados(soma_cartas1,soma_cartas2):
-        m=0
-        lista=[]
-        while m<j:
-            lista.append(m)
-            m+=1
         i=0
-        while i<len(lista):
-            if escolhas[lista[i]]=='empate':
+        while i<len(fichas):
+            if escolhas[i]=='empate':
                 if soma_cartas1==soma_cartas2:
-                    fichas[lista[i]]=fichas[lista[i]] +8*(1-0.1436)*apostas[lista[i]]
+                    fichas[i]=fichas[i] +8*(1-0.1436)*apostas[i]
                     print('Você ganhou,player {0}!'.format(i+1))
                 else:
-                    fichas[lista[i]]=fichas[lista[i]]- apostas[lista[i]]
+                    fichas[i]=fichas[i]- apostas[i]
                     print('Você perdeu,player {0}!'.format(i+1))
         
-            elif escolhas[lista[i]]=='banco':
+            elif escolhas[i]=='banco':
                 if soma_cartas2>soma_cartas1:
-                    fichas[lista[i]]=fichas[lista[i]] + (0.95)*(1-0.0106)*apostas[lista[i]]
+                    fichas[i]=fichas[i] + (0.95)*(1-0.0106)*apostas[i]
                     print('Você ganhou,player {0}!'.format(i+1))
                     
                 else:
-                    fichas[lista[i]]=fichas[lista[i]] -apostas[lista[i]]
+                    fichas[i]=fichas[i] -apostas[i]
                     print('Você perdeu, player {0}!'.format(i+1))
                                        
-            elif escolhas[lista[i]]=='jogador':
+            elif escolhas[i]=='jogador':
                 if soma_cartas1>soma_cartas2:
-                    fichas[lista[i]]=fichas[lista[i]] +apostas[lista[i]]*(1-0.024)
+                    fichas[i]=fichas[i] +apostas[i]*(1-0.024)
                     print('Você ganhou, player {0}!'.format(i+1))
         
                 else:
-                    fichas[lista[i]]=fichas[lista[i]] - apostas[lista[i]]
+                    fichas[i]=fichas[i] - apostas[i]
                     print('Você perdeu, player {0}!'.format(i+1))
                   
             else:
@@ -62,7 +62,6 @@ while True:
                 break
             i+=1
             return fichas
-            
               
     às=['ás',1]
     dois=['dois',2]
