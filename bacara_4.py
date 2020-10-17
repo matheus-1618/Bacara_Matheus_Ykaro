@@ -7,7 +7,7 @@ for i in range(0,x):
     fichas1=int(input('Com quantas fichas você quer começar, player {0}: '.format(i+1)))
     fichas.append(fichas1)
 
-while True:
+while True:#booleana 1
     if o==1 or o==6 or o==8:
         None
     else:
@@ -19,7 +19,7 @@ while True:
             print('Que pena, as fichas de algum player, acabaram, FIM DE JOGO!')
             a=True
     
-    if a==True:
+    if a==True: #condicional para a verdadeiro
         break
     
     às=['ás',1]
