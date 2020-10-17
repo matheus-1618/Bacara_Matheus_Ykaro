@@ -31,30 +31,30 @@ while True:
             m+=1
         i=0
         while i<len(lista):
-            if escolhas[lista[i]]=='empate':
+            if escolhas[i]=='empate':
                 if soma_cartas1==soma_cartas2:
-                    fichas[lista[i]]=fichas[lista[i]] +8*(1-0.1436)*apostas[lista[i]]
+                    fichas[i]=fichas[i] +8*(1-0.1436)*apostas[i]
                     print('Você ganhou,player {0}!'.format(i+1))
                 else:
-                    fichas[lista[i]]=fichas[lista[i]]- apostas[lista[i]]
+                    fichas[i]=fichas[i]- apostas[i]
                     print('Você perdeu,player {0}!'.format(i+1))
         
-            elif escolhas[lista[i]]=='banco':
+            elif escolhas[i]=='banco':
                 if soma_cartas2>soma_cartas1:
-                    fichas[lista[i]]=fichas[lista[i]] + (0.95)*(1-0.0106)*apostas[lista[i]]
+                    fichas[i]=fichas[i] + (0.95)*(1-0.0106)*apostas[i]
                     print('Você ganhou,player {0}!'.format(i+1))
                     
                 else:
-                    fichas[lista[i]]=fichas[lista[i]] -apostas[lista[i]]
+                    fichas[i]=fichas[i] -apostas[i]
                     print('Você perdeu, player {0}!'.format(i+1))
                                        
-            elif escolhas[lista[i]]=='jogador':
+            elif escolhas[i]=='jogador':
                 if soma_cartas1>soma_cartas2:
-                    fichas[lista[i]]=fichas[lista[i]] +apostas[lista[i]]*(1-0.024)
+                    fichas[i]=fichas[i] +apostas[i]*(1-0.024)
                     print('Você ganhou, player {0}!'.format(i+1))
         
                 else:
-                    fichas[lista[i]]=fichas[lista[i]] - apostas[lista[i]]
+                    fichas[i]=fichas[i] - apostas[i]
                     print('Você perdeu, player {0}!'.format(i+1))
                   
             else:
