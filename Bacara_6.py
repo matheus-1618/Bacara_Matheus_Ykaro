@@ -20,8 +20,8 @@ while True: #Booleana que aceita o preenchimento da lista
         break
 
     a=False
-    for m in fichas: #condicional para quando as fichas de um ou mais players acaba
-        if m==0 or m<1:
+    for m in fichas: #Loop para a renovação automática de partidas
+        if m==0 or m<1: #condicional para quando as fichas de um ou mais players acaba
             print('Que pena, as fichas de algum player, acabaram, FIM DE JOGO!')
             a=True
         
@@ -87,7 +87,7 @@ while True: #Booleana que aceita o preenchimento da lista
     apostas=[]
     c=False
     s=0
-    for m in fichas: 
+    for m in fichas: #Loop com objetivo de manter a escolha individual quando há dois ou mais players
         print('Você tem {0} fichas, player {1}'.format(m,s+1))
         s+=1
         print('Em quem você deseja apostar? ')
@@ -103,13 +103,13 @@ while True: #Booleana que aceita o preenchimento da lista
             print(' Que pena que você desistiu')
             break
     f=0
-    for n in fichas:
+    for n in fichas: #Loop para receber o valor da aposta em cada rodada 
         aposta1=float(input('Quantas fichas você deseja apostar,player {0}: '.format(f+1)))
         apostas.append(aposta1)
         f+=1
         
     b=0
-    while b<len(escolhas):
+    while b<len(escolhas): #Loop para o caso em que o player deseje encerrar o jogo
         if escolhas[b]=='Sair' or escolhas[b]=='sair':
             print(' Que pena que você desistiu!Você saiu com {0:.2f} fichas'.format(float(fichas)))
             break
