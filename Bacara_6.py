@@ -1,14 +1,35 @@
-import random
+import random 
+print('''
+Olá! Seja bem vindo ao Cassino Matheus&Ykaro! Iremos jogar Bacará!
+O jogo consiste em distribuir cartas de forma aleatória para o Banco e para o jogador.
+Ganha quem chegar o mais próximo possível da soma 9.
+''')
 j=int(input('Quanto(s) player(s) você deseja no jogo? '))
 o=int(input('Com quantos baralhos você(s) desejam jogar? 1, 6 ou 8? '))
 h=0
-fichas=[]
 while h<j:
     fichas1=float(input('Com quantas fichas você quer começar, player {0}: '.format(h+1)))
     fichas.append(fichas1)
     h+=1
 
-def resultados(soma_cartas1,soma_cartas2):
+while True:
+    fichas=[]
+    if o==1 or o==6 or o==8:
+        None
+    else:
+        print('Não temos essa opção de baralhos, recomece o jogo!')
+        break
+
+    a=False
+    for m in fichas:
+        if m==0 or m<1:
+            print('Que pena, as fichas de algum player, acabaram, FIM DE JOGO!')
+            a=True
+        
+    if a==True:
+        break
+    
+    def resultados(soma_cartas1,soma_cartas2):
         i=0
         while i<len(fichas):
             if escolhas[i]=='empate':
