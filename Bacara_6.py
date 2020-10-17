@@ -2,12 +2,12 @@ import random
 j=int(input('Quanto(s) player(s) você deseja no jogo? '))
 o=int(input('Com quantos baralhos você(s) desejam jogar? 1, 6 ou 8? '))
 h=0
+fichas=[]
 while h<j:
     fichas1=float(input('Com quantas fichas você quer começar, player {0}: '.format(h+1)))
     fichas.append(fichas1)
     h+=1
 while True:
-    fichas=[]
     if o==1 or o==6 or o==8:
         None
     else:
@@ -24,32 +24,37 @@ while True:
         break
     
     def resultados(soma_cartas1,soma_cartas2):
+        m=0
+        lista=[]
+        while m<j:
+            lista.append(m)
+            m+=1
         i=0
-        while i<len(fichas):
-            if escolhas[i]=='empate':
+        while i<len(lista):
+            if escolhas[lista[i]]=='empate':
                 if soma_cartas1==soma_cartas2:
-                    fichas[i]=fichas[i] +8*(1-0.1436)*apostas[i]
+                    fichas[lista[i]]=fichas[lista[i]] +8*(1-0.1436)*apostas[lista[i]]
                     print('Você ganhou,player {0}!'.format(i+1))
                 else:
-                    fichas[i]=fichas[i]- apostas[i]
+                    fichas[lista[i]]=fichas[lista[i]]- apostas[lista[i]]
                     print('Você perdeu,player {0}!'.format(i+1))
         
-            elif escolhas[i]=='banco':
+            elif escolhas[lista[i]]=='banco':
                 if soma_cartas2>soma_cartas1:
-                    fichas[i]=fichas[i] + (0.95)*(1-0.0106)*apostas[i]
+                    fichas[lista[i]]=fichas[lista[i]] + (0.95)*(1-0.0106)*apostas[lista[i]]
                     print('Você ganhou,player {0}!'.format(i+1))
                     
                 else:
-                    fichas[i]=fichas[i] -apostas[i]
+                    fichas[lista[i]]=fichas[lista[i]] -apostas[lista[i]]
                     print('Você perdeu, player {0}!'.format(i+1))
                                        
-            elif escolhas[i]=='jogador':
+            elif escolhas[lista[i]]=='jogador':
                 if soma_cartas1>soma_cartas2:
-                    fichas[i]=fichas[i] +apostas[i]*(1-0.024)
+                    fichas[lista[i]]=fichas[lista[i]] +apostas[lista[i]]*(1-0.024)
                     print('Você ganhou, player {0}!'.format(i+1))
         
                 else:
-                    fichas[i]=fichas[i] - apostas[i]
+                    fichas[lista[i]]=fichas[lista[i]] - apostas[lista[i]]
                     print('Você perdeu, player {0}!'.format(i+1))
                   
             else:
@@ -57,6 +62,7 @@ while True:
                 break
             i+=1
             return fichas
+            
               
     às=['ás',1]
     dois=['dois',2]
