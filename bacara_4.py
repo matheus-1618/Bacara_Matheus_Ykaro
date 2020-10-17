@@ -55,9 +55,11 @@ while True:#booleana 1
     if c==True:
         print(' Que pena que você desistiu')
         break
+    v=1
     for n in fichas:
-        aposta1=float(input('Quantas fichas você deseja apostar: '))
+        aposta1=float(input('Quantas fichas você deseja apostar,player {0}: '.format(v)))
         apostas.append(aposta1)
+        v+=1
     
 
     b=0
