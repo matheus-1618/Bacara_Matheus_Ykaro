@@ -6,7 +6,7 @@ O jogo consiste em distribuir cartas de forma aleatória para o Banco e para o j
 Ganha quem chegar o mais próximo possível da soma 9.
 ''') #Painel de início do jogo
 j=int(input('Quanto(s) player(s) você deseja no jogo? ')) #Entrada de dados respectiva a quantidade de players a apostarem
-o=int(input('Com quantos baralhos você(s) desejam jogar? 1, 6 ou 8? ')) #Entrada de dados respectiva a quantidade de baralhos escolhidos, e suas taxas respectivas
+o=int(input('Com quantos baralhos você(s) deseja(m) jogar? 1, 6 ou 8? ')) #Entrada de dados respectiva a quantidade de baralhos escolhidos, e suas taxas respectivas
 
 h=0
 fichas=[] #lista vazia que irá receber a quantidade de fichas compradas/escolhidas por cada player ao iniciar o jogo, de acordo com seu índice
@@ -106,7 +106,6 @@ while True: #Loop verdadeiro que, fora uma quantidade de fichas igual a zero ou 
     while s<j:#Loop de adição progressiva dos dados a lista 'escolhas'
         for m in fichas: #Loop com objetivo de manter a escolha individual quando há dois ou mais players
             print('Você tem {0} fichas, player {1}'.format(m,s+1)) #Informação das fichas em estoque disponíveis para aposta
-            s+=1
             print('Em quem você deseja apostar? ')
             escolha1=input('''
             Banco('banco'),jogador('jogador') ou empate('empate')?
