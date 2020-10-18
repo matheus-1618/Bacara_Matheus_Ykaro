@@ -1,13 +1,18 @@
-import random
-j=int(input('Quanto(s) player(s) você deseja no jogo? '))
+import random 
+print('''
+Olá! Seja bem vindo ao Cassino Matheus&Ykaro! Iremos jogar Bacará!
+O jogo consiste em distribuir cartas de forma aleatória para o Banco e para o jogador.
+Ganha quem chegar o mais próximo possível da soma 9.
+''')
+j=int(input('Quanto(s) player(s) você deseja no jogo? ')) 
 o=int(input('Com quantos baralhos você(s) desejam jogar? 1, 6 ou 8? '))
 h=0
-fichas=[]
-while h<j:
-    fichas1=float(input('Com quantas fichas você quer começar, player {0}: '.format(h+1)))
+while h<j: #Loop para que a pergunta se repita para todos players 
+    fichas1=float(input('Com quantas fichas você quer começar, player {0}: ?'.format(h+1)))
     fichas.append(fichas1)
     h+=1
-while True:
+while True: #Booleana que aceita o preenchimento da lista
+    fichas=[]
     if o==1 or o==6 or o==8:
         None
     else: #condicional para o caso em que o player informa um número de baralho não permitido
@@ -23,15 +28,15 @@ while True:
     if a==True:
         break
     
-    def resultados(soma_cartas1,soma_cartas2):
-        m=0
-        lista=[]
-        while m<j:
-            lista.append(m)
-            m+=1
+    def resultados(soma_cartas1,soma_cartas2): #função definida para a soma das cartas do banco e jogador
         i=0
+        while i<len(fichas):
         while i<len(lista):
-            if escolhas[i]=='empate':
+
+        
+        while i<len(lista):
+            i=0 
+            if escolhas[i]=='empate': #condicional para quando o player escolhe apostar no empate
                 if soma_cartas1==soma_cartas2:
                     fichas[i]=fichas[i] +8*(1-0.1436)*apostas[i]
                     print('Você ganhou,player {0}!'.format(i+1))
@@ -62,8 +67,8 @@ while True:
                 break
             i+=1
             return fichas
-            
-              
+
+    #definição de listas refentes aos valores de cada carta do baralho          
     às=['ás',1]
     dois=['dois',2]
     três=['três',3]
