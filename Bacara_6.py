@@ -10,13 +10,13 @@ while h<j:
 while True:
     if o==1 or o==6 or o==8:
         None
-    else:
+    else: #condicional para o caso em que o player informa um número de baralho não permitido
         print('Não temos essa opção de baralhos, recomece o jogo!')
         break
 
     a=False
-    for m in fichas:
-        if m==0 or m<1:
+    for m in fichas: #Loop para a renovação automática de partidas
+        if m==0 or m<1: #condicional para quando as fichas de um ou mais players acaba
             print('Que pena, as fichas de algum player, acabaram, FIM DE JOGO!')
             a=True
         
@@ -39,7 +39,7 @@ while True:
                     fichas[i]=fichas[i]- apostas[i]
                     print('Você perdeu,player {0}!'.format(i+1))
         
-            elif escolhas[i]=='banco':
+            elif escolhas[i]=='banco': #condicional para quando o player escolhe apostar no banco
                 if soma_cartas2>soma_cartas1:
                     fichas[i]=fichas[i] + (0.95)*(1-0.0106)*apostas[i]
                     print('Você ganhou,player {0}!'.format(i+1))
@@ -48,7 +48,7 @@ while True:
                     fichas[i]=fichas[i] -apostas[i]
                     print('Você perdeu, player {0}!'.format(i+1))
                                        
-            elif escolhas[i]=='jogador':
+            elif escolhas[i]=='jogador': #condicional para quando o player escolhe apostar no jogo
                 if soma_cartas1>soma_cartas2:
                     fichas[i]=fichas[i] +apostas[i]*(1-0.024)
                     print('Você ganhou, player {0}!'.format(i+1))
@@ -57,7 +57,7 @@ while True:
                     fichas[i]=fichas[i] - apostas[i]
                     print('Você perdeu, player {0}!'.format(i+1))
                   
-            else:
+            else: #condicional para quando o player escreve algo não previsto no código
                 print('Parece que você digitou errado, recomece o jogo')
                 break
             i+=1
@@ -82,7 +82,7 @@ while True:
     apostas=[]
     c=False
     s=0
-    for m in fichas:
+    for m in fichas: #Loop com objetivo de manter a escolha individual quando há dois ou mais players
         print('Você tem {0} fichas, player {1}'.format(m,s+1))
         s+=1
         print('Em quem você deseja apostar? ')
@@ -98,13 +98,13 @@ while True:
             print(' Que pena que você desistiu')
             break
     f=0
-    for n in fichas:
+    for n in fichas: #Loop para receber o valor da aposta em cada rodada 
         aposta1=float(input('Quantas fichas você deseja apostar,player {0}: '.format(f+1)))
         apostas.append(aposta1)
         f+=1
         
     b=0
-    while b<len(escolhas):
+    while b<len(escolhas): #Loop para o caso em que o player deseja encerrar o jogo
         if escolhas[b]=='Sair' or escolhas[b]=='sair':
             print(' Que pena que você desistiu!Você saiu com {0:.2f} fichas'.format(float(fichas)))
             break
@@ -112,7 +112,7 @@ while True:
              b+=1
     numeros=[às,dois,três,quatro,cinco,seis,sete,oito,nove,dez,valete,dama,rei]*o
     naipes=['paus','ouros','espadas','copas']*o
-
+    #sorteio aleatório tanto de números quanto de strings
     a=random.sample(numeros,1)
     b=random.sample(numeros,1)
     c=random.sample(numeros,1)
@@ -127,8 +127,8 @@ while True:
     soma_cartas1= a[0][1]+b[0][1]
     soma_cartas2= c[0][1]+d[0][1]
 
-    if soma_cartas1==8 or soma_cartas1==9:
-        if soma_cartas2>9:
+    if soma_cartas1==8 or soma_cartas1==9: #condicional para quando a soma de cartas do jogador é 8 ou 9 
+        if soma_cartas2>9: #se a soma de cartas do banco for maior que 9, é retirado 10 pontos
             soma_cartas2=soma_cartas2-10
             soma_cartas1=soma_cartas1
             print('A soma do jogador é {0} e do banco é {1}'.format(soma_cartas1,soma_cartas2))
@@ -136,7 +136,7 @@ while True:
             print(x)
             
                 
-        elif soma_cartas2<=9:
+        elif soma_cartas2<=9: #senão se a soma de cartas do banco for menor ou igual a nove, a pontuaçaõ permanece 
             soma_cartas2=soma_cartas2
             soma_cartas1=soma_cartas1
             print('A soma do jogador é {0} e do banco é {1}'.format(soma_cartas1,soma_cartas2))
@@ -144,8 +144,8 @@ while True:
             print(x)
             
         
-    elif soma_cartas2==8 or soma_cartas2==9:
-        if soma_cartas1>9:
+    elif soma_cartas2==8 or soma_cartas2==9: #condicional para quando a soma de cartas do banco é 8 ou 9 
+        if soma_cartas1>9: #se a soma de cartas do jogador for maior que 9, é retirado 10 pontos
             soma_cartas1=soma_cartas1-10
             soma_cartas2=soma_cartas2
             print('A soma do jogador é {0} e do banco é {1}'.format(soma_cartas1,soma_cartas2))
@@ -153,17 +153,17 @@ while True:
             print(x)
             
             
-        elif soma_cartas1<=9:
+        elif soma_cartas1<=9: #senão se a soma de cartas do jogador for menor ou igual a nove, a pontuaçaõ permanece 
             soma_cartas2=soma_cartas2
             soma_cartas1=soma_cartas1
             print('A soma do jogador é {0} e do banco é {1}'.format(soma_cartas1,soma_cartas2))
             x=resultados(soma_cartas1,soma_cartas2)
             print(x)
             
-    elif soma_cartas1>9 and soma_cartas2>9:
+    elif soma_cartas1>9 and soma_cartas2>9: #para o caso em que a soma de cartas do jogador e do banco são maiores que 9 é retirado 10 pontos de ambos
         soma_cartas1=soma_cartas1-10
         soma_cartas2=soma_cartas2-10
-        if soma_cartas1<=5 and soma_cartas2<=5:
+        if soma_cartas1<=5 and soma_cartas2<=5: #se a soma de cartas do jogador e do banco forem menores ou iguais a 5, é sorteada uma terceira carta para ambos
             a1=random.sample(numeros,1)
             a2=random.sample(numeros,1)
             a3=random.sample(naipes,1)
@@ -172,11 +172,11 @@ while True:
             print('A terceira carta do banco é {0} do naipe {1}'.format(a2[0][0],a4[0]))
             soma_cartas1=soma_cartas1+a1[0][1]
             soma_cartas2=soma_cartas2+a2[0][1]
-            if soma_cartas1>9 and soma_cartas2>9:
+            if soma_cartas1>9 and soma_cartas2>9: #se a soma de cartas tanto do jogador quanto do banco forem maiores do que 9, é retirado 10 pontos de cada
                 soma_cartas1=soma_cartas1-10
                 soma_cartas2=soma_cartas2-10
                 
-            elif soma_cartas1>9 and soma_cartas2<=9:
+            elif soma_cartas1>9 and soma_cartas2<=9: #quando a soma do jogador é maior que nove, é retirado 10 pontos do jogador
                 soma_cartas1=soma_cartas1-10
                 soma_cartas2=soma_cartas2
                 print('A soma do jogador é {0} e do banco é {1}'.format(soma_cartas1,soma_cartas2))
@@ -184,7 +184,7 @@ while True:
                 print(x)
                 
                 
-            elif soma_cartas1<=9 and soma_cartas2>9:
+            elif soma_cartas1<=9 and soma_cartas2>9: #quando a soma do banco é maior que nove, é retirado 10 pontos do banco
                 soma_cartas1=soma_cartas1
                 soma_cartas2=soma_cartas2-10
                 print('A soma do jogador é {0} e do banco é {1}'.format(soma_cartas1,soma_cartas2))
@@ -192,8 +192,8 @@ while True:
                 print(x)
                 
                 
-            elif soma_cartas1<=9 and soma_cartas2<=9:
-                if soma_cartas2<=5 and soma_cartas1<=5:
+            elif soma_cartas1<=9 and soma_cartas2<=9: #condicional para quando a soma do jogador e do banco são menores ou iguais a 9
+                if soma_cartas2<=5 and soma_cartas1<=5: #se a soma de cartas do banco e do jogador forem menores ou iguais a 5, é sorteada uma terceira carta para ambos
                     h1=random.sample(numeros,1)
                     h2=random.sample(numeros,1)
                     h3=random.sample(naipes,1)
