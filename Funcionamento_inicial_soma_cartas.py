@@ -1,4 +1,5 @@
 import random
+
 print('''
 Bem vindo ao Cassino MathYkaro!
 Somos especializados no jogo de Bacará, seja com 

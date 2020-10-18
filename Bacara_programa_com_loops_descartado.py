@@ -1,7 +1,6 @@
 import random
 fichas=int(input('Com quantas fichas você quer começar: '))
 while True:
-    
     if fichas==0 or fichas<1:
         print('Suas fichas acabaram, Fim de jogo!')
         break

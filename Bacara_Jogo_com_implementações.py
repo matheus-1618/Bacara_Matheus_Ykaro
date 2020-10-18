@@ -1,8 +1,13 @@
+#EP-Design de Software
+#Equipe: Matheus Silva Melo de Oliveira e Ykaro Andrade
+#Data: 18/10/20
 from math import floor #Importando função que arredondará a quantidade de fichas para baixo, evitando possibilidade de fichas centesimais.
 import random #Importando módulo que disponibilizará a função "sample", que irá sortear aleatoriamente as cartas utilizadas  no jogo. 
 print('''
 Olá! Seja bem vindo ao Cassino Matheus&Ykaro! Iremos jogar Bacará!
+Nesta versão temos várias medidas implementadas, que simulam uma boa experiência de jogo.
 O jogo consiste em distribuir cartas de forma aleatória para o Banco e para o jogador.
+Caso queira descobrir mais sobre as regras, leia no arquivo READ ME, disposto no github.
 Ganha quem chegar o mais próximo possível da soma 9.
 ''') #Painel de início do jogo
 j=int(input('Quanto(s) player(s) você deseja no jogo? ')) #Entrada de dados respectiva a quantidade de players a apostarem
