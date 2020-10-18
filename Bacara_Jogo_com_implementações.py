@@ -1,6 +1,6 @@
 #EP-Design de Software
 #Equipe: Matheus Silva Melo de Oliveira e Ykaro Andrade
-#Data: 18/10/2020
+#Data: 18/10/20
 from math import floor #Importando função que arredondará a quantidade de fichas para baixo, evitando possibilidade de fichas centesimais.
 import random #Importando módulo que disponibilizará a função "sample", que irá sortear aleatoriamente as cartas utilizadas  no jogo. 
 print('''
